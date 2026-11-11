@@ -17,6 +17,7 @@ LOCAL_PATH := $(call my-dir)
 # Make the HAL library
 # ============================================================
 include $(CLEAR_VARS)
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 
 LOCAL_CFLAGS := -Wno-unused-parameter
 ifeq ($(TARGET_BUILD_VARIANT),userdebug)
@@ -70,6 +71,7 @@ endif
 include $(BUILD_STATIC_LIBRARY)
 
 include $(CLEAR_VARS)
+LOCAL_CFLAGS += -Wno-error  # Pie: legacy Marvell code
 
 LOCAL_REQUIRED_MODULES :=
 
